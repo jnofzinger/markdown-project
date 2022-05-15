@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Markdown Converter</title>
+</head>
+
+    <script>
+        function resetForm() {
+            document.getElementById('markdown').value = '';
+            document.getElementById('html').value = '';
+        }
+    </script>
+
+    <body>
+        <h1 align="center">Markdown Converter</h1>
+        <form action="#" th:action="@{/markdown}" th:object="${formData}" method="post">
+            <table style="border:1px solid black;margin-left:auto;margin-right:auto;">
+                <tr>
+                    <td><h2>Markdown</h2></td>
+                    <td><h2>HTML</h2></td>
+                </tr>
+                <tr>
+                    <td><textarea rows="40" cols="100" th:field="*{markdown}"></textarea></td>
+                    <td><textarea readonly rows="40" cols="100" th:field="*{html}"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <div style="text-align:center">
+                            <input type="submit" value="Submit" /> <button type="button" onclick="resetForm()">Reset</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
