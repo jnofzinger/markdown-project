@@ -53,13 +53,13 @@ class MarkdownTests {
 				"\n" +
 				"Hello!\n" +
 				"\n" +
-				"This is sample markdown for the [Mailchimp](https://www.mailchimp.com) homework assignment.";
+				"This is sample markdown for the [Links](https://www.links.com) assignment.";
 
 		String expect = "<h1>Sample Document</h1>\n" +
 				"\n" +
 				"<p>Hello!</p>\n" +
 				"\n" +
-				"<p>This is sample markdown for the <a href=\"https://www.mailchimp.com\">Mailchimp</a> homework assignment.</p>";
+				"<p>This is sample markdown for the <a href=\"https://www.links.com\">Links</a> homework assignment.</p>";
 
 		assertEquals(expect, markdownService.convertToHtml(test));
 
